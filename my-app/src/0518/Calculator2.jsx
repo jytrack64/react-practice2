@@ -15,7 +15,7 @@ export default function Calculator2() {
       // key : event.target.value,
       [key]: parseInt(event.target.value)
     })
-    //console.log("useState : ", {...inputs});
+    console.log("useState : ", {...inputs});
   }
 
   // useEffect(() => {
@@ -24,20 +24,12 @@ export default function Calculator2() {
   
 
   const handleClickButton = (event) => {
-    // let sum = 0;
-    // Object.values(inputs).map((item) => setResult(sum += item));
-    // setResult(sum);
-
-    // setResult(Object.values(inputs).reduce((a, b) => a + parseInt(b, 10), 0));
-    
-    setResult(Object.values(inputs).reduce((a, b) => { 
-      console.log(inputs);
-      console.log(a);
-      console.log(b);
-      return (
-        a + parseInt(b)
-      )
-    }, 0));
+    let sum = 0;
+    Object.values(inputs).map((item) => { 
+      sum += item;
+    });
+    setResult(sum);
+    // setResult(Object.values(inputs).reduce((a, b) => a + b), 0);
   }
 
   return (

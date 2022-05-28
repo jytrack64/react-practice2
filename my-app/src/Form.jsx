@@ -1,6 +1,7 @@
 import React, {useState, useRef} from 'react'
+import { Link } from "react-router-dom";
 
-export default function Practice4() {
+export default function Form() {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const idRef = useRef(null);
@@ -9,6 +10,7 @@ export default function Practice4() {
   const passwordMsg = "유효하지 않은 password입니다.";
   const idCheck = (id.length >= 6 && id.length <= 20);
   const passwordCheck = (password.length >= 12 && password.length <= 20);
+  // let navigate = useNavigate();
 
   const handleChangeInput = (e) => {
     if(e.target.name === "id") {
@@ -19,20 +21,20 @@ export default function Practice4() {
     }
   }
 
-  const handleClick = () => {
+  const handleClick = (e) => {
     if ( !idCheck ) {
       alert(idMsg);
       setId('');
-      // idRef.current.value='';
       idRef.current.focus();
+      // e.preventDefault();
+      return;
     }
     else if ( !passwordCheck ) {
       alert(passwordMsg);
       setPassword('');
       passwordRef.current.focus();
-    }
-    else {
-      alert('회원가입 성공!');
+      // e.preventDefault();
+      return;
     }
   };
 
@@ -50,9 +52,14 @@ export default function Practice4() {
         passwordCheck ? null : passwordMsg
       : null}
     </div>
-    <button type="button" onClick={handleClick} disabled={
+    
+    <Link to={`/mypage/${id}`}>
+        <button onClick={handleClick} disabled={
       (id || password) ? false : true 
-      }>회원가입</button>
+      }
+      
+      >로그인</button>
+    </Link>
   </div>
   );
 }

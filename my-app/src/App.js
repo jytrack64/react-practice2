@@ -1,12 +1,19 @@
 import React, {useEffect, useState} from 'react';
+// import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
 // import Calculator from './0518/Calculator';
 // import Calculator2 from './0518/Calculator2';
+
 // import Practice1 from './0520/Practice1';
 // import Practice2 from './0520/Practice2';
 // import Practice3 from './0520/Practice3';
 // import Practice4 from './0520/Practice4';
-import Calculator from './0521/Calculator';
 // import Practice5 from './0520/Practice5';
+
+// import Calculator from './0521/Calculator';
+
+// import Ex1 from './0523/Ex1';
+// import Ex3 from './0523/Ex3';
 
 /*
 const App = () => {
@@ -102,13 +109,9 @@ const App = () => {
 
 const App = () => {
   return (
-    // <Calculator2 />
-    // <Practice1 />
-    //<Practice2 />
-    // <Practice3 />
-    // <Practice4 />
-    // <Practice5 />
-    <Calculator />
+    <div>
+      App
+    </div>
   )
-}
+  }
 export default App;
